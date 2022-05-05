@@ -1,13 +1,29 @@
-public class MyHashTable<K,V> {
+import java.util.ArrayList;
+import java.util.Objects;
 
-    private class HashNode <K,V>{}
-    private int M = 11;
+public class MyHashTable <K,V> {
+    private ArrayList<HashNode<K,V>> bucketArray;
+    private int numBuckets;
+
     private int size;
 
     public MyHashTable(){
+        bucketArray = new ArrayList<>();
+        numBuckets = 10;
+        size = 0;
+
+        for (int i = 0; i < numBuckets; i++){
+            bucketArray.add(null);
+        }
     }
 
-    public  MyHashTable(int M){}
+    public int size(){
+        return size;
+    }
+
+    public boolean isEmpty(){
+        return size() == 0;
+    }
 
     private int hash (K key){
     }
@@ -22,5 +38,5 @@ public class MyHashTable<K,V> {
     }
 
     public K getKey(V value ){}
-    
+
 }
